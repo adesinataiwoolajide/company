@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/", "WebsiteController@index")->name("website.index");
+Route::get("/aboutus", "WebsiteController@aboutus")->name("website.aboutus");
+Route::get("/ourteam", "WebsiteController@team")->name("website.team");
+Route::get("/services", "WebsiteController@services")->name("website.service");
+Route::get("/products", "WebsiteController@products")->name("website.product");
+Route::get("/contactus", "WebsiteController@contact")->name("website.contact");
+
+
 
 // Auth::routes();
 
