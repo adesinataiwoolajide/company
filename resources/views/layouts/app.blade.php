@@ -220,6 +220,7 @@
      <!-- inject:js-->
      <script src="{{asset('website/js/plugins.min.js')}}"></script>
      <script src="{{asset('website/js/script.min.js')}}"></script>
+     @include('layouts.message')
      <!-- endinject-->
 </body>
 
