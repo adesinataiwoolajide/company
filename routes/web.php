@@ -16,7 +16,7 @@ Route::get('/empire_login', function () {
 });
 
 Route::post("/user_login", "AdministratorController@userlogin")->name("admin.login");
-Route::get("/logout", "AdministratorController@logout")->name("admin.logout");
+Route::get("/user_logout", "AdministratorController@logout")->name("admin.logout");
 Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetFor');
 
 
@@ -68,6 +68,17 @@ Route::group(["prefix" => "administrator", "middleware" => "verified"], function
             Route::post("/update/{type_id}", "ProjectCategoryController@update")->name("project.category.update");
             Route::get("/recyclebin", "ProjectCategoryController@bin")->name("project.category.restore");
             Route::get("/restore/{type_id}", "ProjectCategoryController@restore")->name("project.category.undelete");
+
+        });
+
+        Route::group(["prefix" => "clients"], function(){
+            Route::get("/", "ClientController@index")->name("client.create");
+            Route::post("/save", "ClientController@store")->name("client.save");
+            Route::get("/edit/{client_id}", "ClientController@edit")->name("client.edit");
+            Route::get("/delete/{client_id}", "ClientController@destroy")->name("client.delete");
+            Route::post("/update/{client_id}", "ClientController@update")->name("client.update");
+            Route::get("/recyclebin", "ClientController@bin")->name("client.restore");
+            Route::get("/restore/{client_id}", "ClientController@restore")->name("client.undelete");
 
         });
 

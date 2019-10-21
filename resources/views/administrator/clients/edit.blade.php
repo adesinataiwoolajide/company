@@ -31,7 +31,7 @@
                                 {{ csrf_field() }}
                                 <div class="form-row">
                                     <div class="form-group col-md-8">
-                                        <input type="text" class="form-control form-control-rounded" id=""
+                                        <input category="text" class="form-control form-control-rounded" id=""
                                         placeholder="Enter The Project category Name" required name="category_name" value="{{$cate->category_name}}">
                                         <span style="color: red">** This Field is Required **</span>
                                         @if ($errors->has('category_name'))
@@ -49,7 +49,7 @@
                                     <input type="hidden" name="prev_name" value="{{$cate->category_name}}">
 
                                     <div class="form-group col-md-4">
-                                        <button type="submit" class="btn btn-rounded btn-outline-primary btn-block" name="">UPDATE THE PROJECT CATEGORY</button>
+                                        <button category="submit" class="btn btn-rounded btn-outline-primary btn-block" name="">UPDATE THE PROJECT CATEGORY</button>
                                     </div>
                                 </div>
                             </form>

@@ -26,11 +26,11 @@
                         <div class="card-body">
                             <p>Please fill the below form to add a new project category </p>
                             @include('partials._message')
-                            <form action="{{route('project.category.save')}}" method="POST" enccategory="multipart/form-data">
+                            <form action="{{route('project.category.save')}}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="form-row">
                                     <div class="form-group col-md-8">
-                                        <input category="text" class="form-control form-control-rounded" id=""
+                                        <input type="text" class="form-control form-control-rounded" id=""
                                         placeholder="Enter The Project category Name" required name="category_name">
                                         <span style="color: red">** This Field is Required **</span>
                                         @if ($errors->has('category_name'))
@@ -47,7 +47,7 @@
                                     </div>
 
                                     <div class="form-group col-md-4">
-                                        <button category="submit" class="btn btn-rounded btn-outline-primary btn-block" name="">ADD THE PROJECT CATEGORY</button>
+                                        <button type="submit" class="btn btn-rounded btn-outline-primary btn-block" name="">ADD THE PROJECT CATEGORY</button>
                                     </div>
                                 </div>
                             </form>

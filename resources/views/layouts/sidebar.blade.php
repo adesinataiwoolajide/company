@@ -3,7 +3,7 @@
     <div class="ecaps-sidemenu-area">
         <!-- Desktop Logo -->
         <div class="ecaps-logo">
-            <a href="./"><img class="desktop-logo" src="img/core-img/logo.png" alt="Desktop Logo"> <img class="small-logo" src="img/core-img/small-logo.png" alt="Mobile Logo"></a>
+            <a href="{{route('administrator.dashboard')}}"><img class="desktop-logo" src="img/core-img/logo.png" alt="Desktop Logo"> <img class="small-logo" src="img/core-img/small-logo.png" alt="Mobile Logo"></a>
         </div>
 
         <!-- Side Nav -->
@@ -23,17 +23,17 @@
                             </div>
                         </li>
 
-                        <li class="active"><a href="./"><i class="icon_lifesaver"></i> <span> DASHBOARD</span></a></li>
+                        <li class="active"><a href="{{route('administrator.dashboard')}}"><i class="icon_lifesaver"></i> <span> DASHBOARD</span></a></li>
                         <li><a href="{{route('user.create')}}"><i class="fa fa-users"></i> <span> USERS</span></a></li>
                         <li><a href="{{route('project.type.create')}}"><i class="fa fa-language"></i> <span> PROJECT TYPES</span></a></li>
-                        <li><a href="{{route('project.category.create')}}"><i class="fa fa-list"></i> <span> PRO CATEGORIES</span></a></li>
-                        <li><a href="categories"><i class="icon_cog"></i> <span> CATEGORIES</span></a></li>
+                        <li><a href="{{route('project.category.create')}}"><i class="fa fa-list"></i> <span> PRO CATEGORy</span></a></li>
+                        <li><a href="{{route('clients.create')}}"><i class="icon_cogs"></i> <span> CLIENTS</span></a></li>
                         <li><a href="brands"><i class="icon_cog"></i> <span> PROJECTS</span></a></li>
                         <li><a href="drivers"><i class="fa fa-cogs"></i> <span> TEAM</span></a></li>
                         <li><a href="cars"><i class="fa fa-sitemap"></i> <span>SERVICES</span></a></li>
                         <li><a href="orders"><i class="fa fa-shopping-cart"></i> <span> ORDERS</span></a></li>
                         <!-- <li><a href="payments"><i class="fa fa-bank"></i> <span> PAYMENTS</span></a></li> -->
-                        <li><a href=""><i class="fa fa-lock"></i> <span> LOGOUT</span></a></li>
+                        <li><a href="{{route('logout')}}"><i class="fa fa-lock"></i> <span> LOGOUT</span></a></li>
 
                     </ul>
                 </nav>

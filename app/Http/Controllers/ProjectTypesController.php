@@ -14,6 +14,7 @@ class ProjectTypesController extends Controller
     public function __construct(ProjectTypes $type)
     {
        // set the model
+       $this->middleware('auth');
        $this->model = new ProjectTypeRepository($type);
        $this->middleware(['role:Administrator|Admin']);
     }

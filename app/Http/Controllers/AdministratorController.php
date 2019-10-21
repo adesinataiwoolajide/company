@@ -21,8 +21,9 @@ class AdministratorController extends Controller
         ];
         //$user = User::where('user_id', 1)->first();
         // $user->assignRole('Administrator');
+       
         if(Auth::attempt($data)){
-
+            $usertype = Auth::user()->role;
             switch ($usertype){
                 case (auth()->user()->hasRole('Administrator') OR
                     (auth()->user()->hasRole('Admin')));

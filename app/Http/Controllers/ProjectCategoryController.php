@@ -15,6 +15,7 @@ class ProjectCategoryController extends Controller
     public function __construct(ProjectCategories $categories)
     {
        // set the model
+       $this->middleware('auth');
        $this->model = new CategoryRepository($categories);
        $this->middleware(['role:Administrator|Admin']);
     }
@@ -97,7 +98,9 @@ class ProjectCategoryController extends Controller
         if($this->model->create($data)){
             return redirect()->route("project.category.create")->with("success", "You Have Added "
             .$request->input("category_name"). " To The Project category Successfully");
-        }
+        }else{
+            return redirect()->back()->with("error", "Network Failure");
+        } 
 
     }
 
@@ -153,7 +156,9 @@ class ProjectCategoryController extends Controller
         if($this->model->update($data, $category_id)){
             return redirect()->route("project.category.create")->with("success", "You Have Changed The Project category Name From ". " ".
             $request->input('prev_name') ." ". " To " .$request->input("category_name"). " ". "Successfully");
-        }
+        }else{
+            return redirect()->back()->with("error", "Network Failure");
+        } 
     }
 
     /**
@@ -164,15 +169,14 @@ class ProjectCategoryController extends Controller
      */
     public function destroy($category_id)
     {
-
         $category =  $this->model->show($category_id);
         $details= $category->category_name;
-
         if (($category->delete($category_id))AND ($category->trashed())) {
             return redirect()->back()->with([
-                'success' => "You Have Deleted $details From The Vehicle category Successfully",
+                'success' => "You Have Deleted $details From The Project Categories List Successfully",
             ]);
-        }
-
+        }else{
+            return redirect()->back()->with("error", "Network Failure");
+        } 
     }
 }
